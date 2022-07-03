@@ -5,10 +5,10 @@ class City{
     constructor(name){
         this.#name=name;
     }
-    getName(){
+    get Name(){
         return this.#name;
     }
-    setName(name){
+    set Name(name){
         this.#name = name;
         return this;
     }
@@ -26,26 +26,26 @@ class Student{
         this.#city = city;
     }
 
-    getName(){
+    get Name(){
         return this.#name;
     }
-    setName(name){
+    set Name(name){
         this.#name = name;
         return this;
     }
 
-    getSurn(){
+    get Surn(){
         return this.#surn;
     }
-    setSurn(surn){
+    set Surn(surn){
         this.#surn = surn;
         return this;
     }
 
-    getSalary(){
+    get Salary(){
         return this.#salary;
     }
-    setSalary(salary){
+    set Salary(salary){
         if(salary >= 0){
         this.#salary = salary;
         }else{
@@ -54,10 +54,10 @@ class Student{
         return this;
     }
 
-    getCity(){
+    get City(){
         return this.#city;
     }
-    setCity(city){
+    set City(city){
         this.#city = city;
         return this;
     }
@@ -70,16 +70,18 @@ class Emploee{
 let city = new City('London')
 let student = new Student('Regulus', 'Black', 15000, city);
 console.log(student);
-//alert(student.getName() +' ' + student.getSurn() + ' ' + student.getSalary() + ' ' + student.getCity().getName());
+//alert(student.Name +' ' + student.Surn + ' ' + student.Salary + ' ' + student.City.Name);
 
 let students = [
-    new Student('Regulus1', 'Black', 15000, city),
-    new Student('Regulus2', 'Black', 15000, city),
-    new Student('Regulus3', 'Black', 15000, city),
-    new Student('Regulus4', 'Black', 15000, city),
-    new Student('Regulus5', 'Black', 15000, city)
+    new Student('Regulus', 'Black', 15000, city),
+    new Student('Regulus', 'Black', 15000, city),
+    new Student('Regulus', 'Black', 15000, city),
+    new Student('Regulus', 'Black', 15000, city),
+    new Student('Regulus', 'Black', 15000, city)
 ]
 
 for (let i = 0; i < students.length; ++ i){
-    console.log(students[i].getName() + '   hey hey hey');
+    console.log('Iteration ' + i + ') ' + students[i].Name + (i+2) +'   hey hey hey');
 }
+
+console.log(student.City.Name);
